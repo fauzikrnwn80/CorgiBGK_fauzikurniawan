@@ -258,14 +258,16 @@ button {
 }
 
 .kotak h1 {
+  margin-bottom: -10px;
   align-content: center;
   font-size: medium;
   font-weight: bold;
 }
 
 .kotak p {
+  margin-bottom: -5px;
   text-align: justify;
-  font-size: small;
+  font-size: smaller;
 }
 
 .logofacebook {
@@ -290,12 +292,14 @@ button {
 }
 
 #close_info {
+  border-color: #f7d3ae;
+  background-color: #f7d3ae;
+  margin-top: -15px;
   text-align: center;
   position: relative;
   align-items: center;
   color: #502e0b;
   font-size: 0.8em;
-  border: dotted 2px;
   border-radius: 15px;
 }
 
@@ -334,6 +338,7 @@ button {
   }
 
   .pilih {
+    bottom: 10px;
     width: auto;
     padding: 10px 50px 15px;
     border: solid turquoise;
@@ -378,11 +383,12 @@ button {
     align-items: center;
     color: #502e0b;
     font-size: 1em;
-    border: dotted 2px;
     border-radius: 15px;
+    border-color: #f7d3ae;
   }
 
   .kotak h1 {
+    margin-bottom: 0;
     font-size: 30px;
     font-weight: bold;
   }
