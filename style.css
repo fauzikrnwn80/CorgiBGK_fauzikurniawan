@@ -1,0 +1,429 @@
+@keyframes corgigoyang {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+  font-family: 'Corben', sans-serif;
+  font-size: 15px;
+  line-height: 1.618em;
+  background: #eceff1;
+  color: #424242;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-size: 20px;
+  margin: auto;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 250;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #eceff1;
+  box-shadow: 0 5px 50px #aaa;
+}
+
+.splash .center {
+  width: 100%;
+  margin: auto;
+  padding: 165px 15px 15px;
+  background: url(favicon.png) center top no-repeat;
+  background-size: 200px;
+}
+
+.splash .center h1 {
+  padding: 0 0 10px;
+  font-family: 'corben';
+  font-size: 3em;
+  font-weight: normal;
+  color: #f5ac5d;
+  -webkit-text-stroke: 3px #502e0b;
+}
+
+.splash .center button {
+  border-radius: 25px;
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 1.25em;
+  line-height: 1em;
+  font-family: sans-serif;
+  border: none;
+  background: #94dbaf;
+  color: #256e41;
+  font-weight: bolder;
+}
+
+.splash .center button:active {
+  transform: translateY(8px);
+  box-shadow: none;
+}
+
+.splash .center button:hover {
+  color: white;
+  background-color: #256e41;
+  border: solid #256e41;
+}
+
+.block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #eceff1;
+}
+
+.block span {
+  margin: auto;
+  padding: 30px;
+}
+
+#corgi {
+  margin-top: 30px;
+  display: inline-block;
+  width: 100%;
+  height: 350px;
+  background-image: url(ANJING\ STANDBY.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.goyang {
+  animation: corgigoyang 1.95s infinite;
+}
+
+.skor {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 200;
+  transform: translateY(-50%);
+  padding: 30px 15px;
+  background: #94dbaf;
+  color: #fff;
+  font-size: 2.5em;
+  border-left: none;
+  border-radius: 0 30px 30px 0;
+  box-shadow: 0 3px 8px #aaa;
+}
+
+.skor span {
+  display: block;
+  padding-bottom: 20px;
+  cursor: help;
+}
+
+.skor span + span {
+  padding: 20px 0 0;
+  border-top: solid 3px white;
+}
+
+.skor skor-corgi,
+.skor skor-player {
+  font-weight: bolder;
+}
+
+.skor .skor-corgi {
+  color: #2e8a51;
+}
+
+.skor .skor-player {
+  color: #ffffff;
+}
+
+.pilih {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  z-index: 150;
+  transform: translateX(-50%);
+  display: inline;
+  width: 90%;
+  padding: 20px 15px;
+  border-radius: 50px;
+  white-space: nowrap;
+  background: turquoise;
+}
+
+.pilih button {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 6px 0 rgb(228, 227, 227);
+}
+
+.pilih button.disabled {
+  filter: grayscale(100%);
+}
+
+.pilih button + button {
+  margin-left: 10px;
+}
+
+.pilih button:active {
+  transform: translateY(8px);
+  box-shadow: none;
+}
+
+.pilih #batu {
+  background: url(PALYER_0003_BATU.png) center center no-repeat;
+  background-size: contain;
+}
+
+.pilih #gunting {
+  background: url(PALYER_0005_GUNTING.png) center center no-repeat;
+  background-size: contain;
+}
+
+.pilih #kertas {
+  background: url(PALYER_0004_KERTAS.png) center center no-repeat;
+  background-size: contain;
+}
+
+#open {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 100;
+  padding: 10px 20px;
+  line-height: 1em;
+  color: #502e0b;
+  font-size: 0.8em;
+  border: dotted 2px;
+  border-radius: 15px;
+}
+
+.kotak-container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease-in;
+}
+
+.kotak-container.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.kotak {
+  padding: 10px 10px 10px;
+  background-color: #fff;
+  font-family: sans-serif;
+  align-items: center;
+  justify-items: center;
+  width: 200px;
+  max-width: 75%;
+  border-radius: 25px;
+}
+
+.kotak h1 {
+  align-content: center;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.kotak p {
+  text-align: justify;
+  font-size: small;
+}
+
+.logofacebook {
+  size: 50px;
+  width: 50px;
+  display: inline;
+  cursor: pointer;
+}
+
+.logoinstagram {
+  size: 50px;
+  width: 50px;
+  display: inline;
+  cursor: pointer;
+}
+
+.logolinkedin {
+  size: 50px;
+  width: 50px;
+  display: inline;
+  cursor: pointer;
+}
+
+#close_info {
+  text-align: center;
+  position: relative;
+  align-items: center;
+  color: #502e0b;
+  font-size: 0.8em;
+  border: dotted 2px;
+  border-radius: 15px;
+}
+
+#reset {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 100;
+  padding: 10px 20px;
+  line-height: 1em;
+  color: #502e0b;
+  font-size: 0.8em;
+  border: dotted 2px;
+  border-radius: 15px;
+}
+
+@media (min-width: 500px) {
+  .splash .center {
+    padding-top: 240px;
+    background-size: 260px;
+  }
+
+  .splash .center h1 {
+    margin: 0 0 30px;
+    font-size: 4em;
+    -webkit-text-stroke: 3px #502e0b;
+  }
+
+  .splash .center button {
+    margin-top: 15px;
+    font-size: 1.5em;
+  }
+
+  .skor {
+    min-width: 80px;
+  }
+
+  .pilih {
+    width: auto;
+    padding: 10px 50px 15px;
+    border: solid turquoise;
+    border-bottom: none;
+    border-radius: 50px;
+  }
+
+  .pilih button {
+    width: 90px;
+    height: 90px;
+  }
+
+  #reset .open {
+    font-size: 1em;
+  }
+
+  .kotak-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .kotak {
+    padding: 20px;
+    background-color: #fff;
+    font-family: sans-serif;
+    align-items: center;
+    justify-items: center;
+    width: 600px;
+    max-width: 100%;
+    border-radius: 25px;
+  }
+
+  #close_info {
+    margin: 0px 100px 5px;
+    text-align: center;
+    align-items: center;
+    color: #502e0b;
+    font-size: 1em;
+    border: dotted 2px;
+    border-radius: 15px;
+  }
+
+  .kotak h1 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .kotak p {
+    text-align: center;
+    font-size: medium;
+    margin-bottom: 5px;
+  }
+
+  .logofacebook {
+    size: 80px;
+    width: 100px;
+    display: inline;
+    cursor: pointer;
+  }
+
+  .logoinstagram {
+    size: 80px;
+    width: 100px;
+    display: inline;
+    cursor: pointer;
+  }
+
+  .logolinkedin {
+    size: 80px;
+    width: 100px;
+    display: inline;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 300px) and (min-height: 500px) {
+  .block {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .kotak {
+    width: 50%;
+    font-size: 5px;
+  }
+}
