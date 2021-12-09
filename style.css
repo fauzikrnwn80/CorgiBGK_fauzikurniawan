@@ -165,22 +165,22 @@ button {
 
 .pilih {
   position: fixed;
-  bottom: 15px;
+  bottom: 0;
   left: 50%;
   z-index: 150;
   transform: translateX(-50%);
   display: inline;
-  width: 90%;
+  width: 70%;
   padding: 20px 15px;
-  border-radius: 50px;
+  border-radius: 50px 50px 0 0;
   white-space: nowrap;
   background: turquoise;
 }
 
 .pilih button {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border: none;
   border-radius: 50%;
   box-shadow: 0 6px 0 rgb(228, 227, 227);
